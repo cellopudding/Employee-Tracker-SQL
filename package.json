@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/cellopudding/Employee-Tracker-SQL#readme",
   "dependencies": {
-    "inquirer": "^9.1.4",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.4",
     "mysql2": "^3.1.2"
   }
 }
