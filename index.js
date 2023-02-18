@@ -58,41 +58,41 @@ function letsBegin() {
       
       type: "list",
       choices: [
-        "Add department",
-        "Add role",
-        "Add employee",
-        "View departments",
-        "View roles",
-        "View employees",
-        "Update employee role",
+        "view all departments",
+        "view all roles",
+        "view all employees",
+        "add a department",
+        "add a roll",
+        "add an employee",
+        "update an employee role",
         "Quit"
       ],
       message: "What would you like to do?",
-      name: "option"
+      name: "choice"
     })
     .then(function(result) {
-      console.log("You entered: " + result.option);
+      console.log("You entered: " + result.choice);
 
-      switch (result.option) {
-        case "Add department":
-          addDepartment();
+      switch (result.choice) {
+        case "view all departments":
+          viewDepartments();
           break;
-        case "Add role":
-          addRole();
-          break;
-        case "Add employee":
-          addEmployee();
-          break;
-        case "View departments":
-          viewDepartment();
-          break;
-        case "View roles":
+        case "view all roles":
           viewRoles();
           break;
-        case "View employees":
+        case "view all employees":
           viewEmployees();
           break;
-        case "Update employee role":
+        case "add a department":
+          addDepartment();
+          break;
+        case "add a roll":
+          addRole();
+          break;
+        case "add an employee":
+          addEmployee();
+          break;
+        case "update employee role":
           updateEmployee();
           break;
         default:

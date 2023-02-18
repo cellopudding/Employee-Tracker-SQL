@@ -1,33 +1,22 @@
-DROP DATABASE IF EXISTS employees_db;
-CREATE DATABASE employees_db;
+use employees_db;
 
-USE employees_db;
+INSERT INTO department (department_name)
+VALUES ("Human Resources"),
+       ("Accounting"),
+       ("Sales"),
+       ("IT"),
+       ("Engineering");
 
-CREATE TABLE department (
-  id INT NOT NULL,
-  department_name VARCHAR(30) NOT NULL,
-  PRIMARY KEY (id)
-);
+INSERT INTO roll (title, salary, department_id)
+       ("Happiness Helper", 50000.00, 3),
+       ("Accountant", 75000.00, 1),
+       ("Salesman", 60000.00, 4),
+       ("Developer", 100000.00, 2),
+       ("Engineer", 90000.00, 5);
 
-CREATE TABLE roll (
-  id INT NOT NULL,
-  title VARCHAR(30) NOT NULL,
-  salary DECIMAL NOT NULL,
-  department_id INT NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (department_id),
-  REFERENCES department(id) 
-);
-
-CREATE TABLE employee (
-  id INT NOT NULL,
-  first_name VARCHAR(30) NOT NULL,
-  last_name VARCHAR(30) NOT NULL,
-  roll_id INT NOT NULL,
-  manager_id INT NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (manager_id),
-  REFERENCES employee(id)
-
-);
-
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+       ("Jeff", "Stone", 6, 3),
+       ("Amanda", "Robinson", 4, 1),
+       ("Mike", "Chlala", 2, 4),
+       ("Drew", "Clover", 1, 7),
+       ("Ashley", "Mathias", 3, 2);
