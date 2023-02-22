@@ -39,7 +39,7 @@ const db = mysql.createConnection(
   },
   console.log(`Welcome to the employees_db database!`)
 );
-letsBegin();
+
 
 
 //LETS BEGIN
@@ -62,7 +62,7 @@ function letsBegin() {
         "view all roles",
         "view all employees",
         "add a department",
-        "add a roll",
+        "add a role",
         "add an employee",
         "update an employee role",
         "Quit"
@@ -86,7 +86,7 @@ function letsBegin() {
         case "add a department":
           addDepartment();
           break;
-        case "add a roll":
+        case "add a role":
           addRole();
           break;
         case "add an employee":
@@ -99,6 +99,16 @@ function letsBegin() {
           quit();
       }
     });
+}
+
+letsBegin();
+const viewDepartments = ()=> {
+  db.query(`SELECT * FROM department`, function(err, results){
+    console.log(`\n`)
+    console.table(results)
+    
+  }).then(()=>letsBegin())
+  
 }
 
 
