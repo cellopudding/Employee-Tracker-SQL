@@ -107,8 +107,27 @@ const viewDepartments = ()=> {
     console.log(`\n`)
     console.table(results)
     
-  }).then(()=>letsBegin())
-  
+  })
+  letsBegin()
 }
+// letsBegin();
+const viewRoles = ()=> {
+  db.query(`SELECT * FROM role`, function(err, results){
+    console.log(`\n`)
+    console.table(results)
+    
+  })
+  letsBegin()
+}
+// letsBegin();
+const viewEmployees = ()=> {
+  db.query(`SELECT * FROM employee`, function(err, results){
+    console.log(`\n`)
+    console.table(results)
+    
+  })
+  letsBegin()
+}
+
 
 
