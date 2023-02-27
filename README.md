@@ -16,6 +16,10 @@ your employee databse so that the user can effectively manage their team.
 
 
 
+https://user-images.githubusercontent.com/117662089/221710913-973af6df-e9f0-4874-a4fc-eeee614c94e3.mp4
+
+
+
 
 ## Technology
 VSCode, JavaScript, node.js, Inquirer Package, SQL
