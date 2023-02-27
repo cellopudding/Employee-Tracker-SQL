@@ -225,18 +225,21 @@ function addEmployee() {
             message: "Who is the employee's manager?",
             choices: managerChoices
           })
+          
             .then(res => {
+              console.log(res)
               let employee = {
                 manager_id: res.managerId,
                 role_id: roleId,
                 first_name: firstName,
                 last_name: lastName
               }
-db.promise().query("INSTERT INTO employee SET ?", employee)
+db.promise().query("INSERT INTO employee (manager_id, role_id, first_name, last_name) VALUES (?, ?, ?, ?)", employee.manager_id, employee.role_id, employee.first_name, employee.last_name)
 
         })
         .then(() => console.log(
           `Added ${firstName} ${lastName} to the database`
+          
         ))
         .then(() => letsBegin())
         
@@ -246,8 +249,9 @@ db.promise().query("INSTERT INTO employee SET ?", employee)
   
   })
   
-  }
-)}
+  })
+}
 
 // WHEN I choose to update an employee role
-// THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
+// THEN I am prompted to select an employee to update and their new role and this information is updated in the database
+
